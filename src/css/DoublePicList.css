@@ -1,0 +1,60 @@
+.doublePicList {
+
+    height: 100%;
+    width: 100%;
+    /*left: 10%;*/
+    position: absolute;
+    display: -webkit-inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.doublePicList .ul {
+    list-style: none;
+    width:40%;
+    height:90%;
+    position: relative;
+
+}
+
+.doublePicList .ul:nth-child(2) li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height:100%;
+    width:100%;
+    text-align: right;
+}
+.doublePicList .ul:nth-child(3) li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height:100%;
+    width:100%;
+    text-align: left;
+}
+
+.doublePicList .ul li:not(:nth-child(2)) {
+    opacity: 0;
+}
+
+.doublePicList .ul .left {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.doublePicList .ul .right {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+}

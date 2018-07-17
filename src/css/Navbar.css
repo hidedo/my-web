@@ -1,0 +1,36 @@
+.navbar{
+    height:80px;
+    width:14px;
+    position:absolute;
+    top:39%;
+    left:2.4%;
+
+}
+.navbar ul{
+    height:inherit;
+    width:inherit;
+    display:-webkit-inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.navbar li{
+    cursor: pointer;
+    list-style:none;
+    background-color: #000000;
+    width:100%;
+    text-align:center;
+    transition:background 0.2s;
+
+}
+
+.link{
+    text-decoration: none;  
+    color: #000000;
+}
+
+.navbar a:hover{
+    color:silver;
+}
+

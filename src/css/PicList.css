@@ -1,0 +1,56 @@
+.picList {
+
+    height:inherit;
+    width:inherit;
+
+    position: absolute;
+    display: -webkit-inline-flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+.picList .ul {
+    list-style: none;
+    width:80%;
+    height:90%;
+
+    position: relative;
+
+
+}
+
+.picList .ul li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height:100%;
+    width:100%;
+    text-align:center;
+
+}
+
+.picList .ul li:not(:nth-child(3)) {
+    opacity: 0;
+}
+
+.picList .ul .left {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.picList .ul .right {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+}

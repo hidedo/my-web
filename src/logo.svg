@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+
+<style type="text/css">
+@font-face{
+font-family:"myFont";
+src:url("AGaramondPro-Regular.otf");
+  }
+</style>
+  <text xml:space="preserve"  x="40" y="50" fill="black" font-family="myFont">L I    H U I</text>
+</svg>

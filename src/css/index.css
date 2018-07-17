@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "calluna-sans",Sans-serif;
+  font-size:small;
+
+}
+@font-face{
+  font-family:"calluna-sans";
+  src:url("CallunaSansRegular.otf");
+}
+@font-face{
+  font-family:"myFont";
+  src:url("../AGaramondPro-Regular.otf");
+}
+html, body{
+  height:100%;
+}
+
+#root,#root >div{
+  height:inherit;
+}
+
