@@ -79,7 +79,7 @@
 
 }
 
-.detailPic .ul li:not(:nth-child(4)) {
+.detailPic .ul li:not(:nth-child(3)) {
     opacity: 0;
 }
 
@@ -90,6 +90,7 @@
     left: 0;
     top: 0;
     z-index: 1;
+    cursor:w-resize;
 }
 
 .detailPic .ul .right {
@@ -99,5 +100,5 @@
     right: 0;
     top: 0;
     z-index: 1;
-
+    cursor: e-resize;
 }

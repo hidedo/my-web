@@ -5,8 +5,7 @@ import React, { Component } from 'react';
 import '../css/Project.css'
 import '../css/animate.css'
 import PicList from './PicList'
-
-import '../css/fontello-4aba2eed/css/fontello.css'
+import '../css/fontello-6411c29f/css/fontello.css'
 
 import { Link } from 'react-router-dom'
 

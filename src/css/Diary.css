@@ -22,7 +22,7 @@
     position: fixed;
     left:0;
     z-index: 1;
-
+    cursor:w-resize;
 }
 .diary .right{
     width:50%;
@@ -30,13 +30,9 @@
     position: fixed;
     right:0;
     z-index: 1;
-
+    cursor:e-resize;
 }
-/*.diary div:nth-child(4){*/
-    /*width:124.5px;*/
-    /*height:187.5px;*/
 
-/*}*/
 
 
 .diary div:nth-child(5){
