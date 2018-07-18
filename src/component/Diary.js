@@ -4,7 +4,6 @@
 import React, { Component } from 'react';
 import '../css/animate.css'
 import '../css/Diary.css'
-
 import { Link } from 'react-router-dom'
 
 class Diary extends Component {
