@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import '../css/PicList.css'
 import '../css/animate.css'
-import classNames from 'classnames'
+
 
 
 
@@ -24,13 +24,13 @@ class PicList extends Component {
 
         if(!this.refs[`myli${n+1}`]){
 
-            this.refs.myli1.setAttribute('class',`fadeIn animated`)
-            this.refs[`myli${n}`].setAttribute('class',`fadeOut animated`)
-            this.setState({n:1})
+            this.refs.myli1.setAttribute('class',`fadeIn animated`);
+            this.refs[`myli${n}`].setAttribute('class',`fadeOut animated`);
+            this.setState({n:1});
             return;
         }
-        this.refs[`myli${n}`].setAttribute('class',`fadeOut animated`)
-        this.refs[`myli${n+1}`].setAttribute('class',`fadeIn animated`)
+        this.refs[`myli${n}`].setAttribute('class',`fadeOut animated`);
+        this.refs[`myli${n+1}`].setAttribute('class',`fadeIn animated`);
         this.setState({n:n+1})
 
     }
@@ -42,8 +42,8 @@ class PicList extends Component {
 
             return;
         }
-        this.refs[`myli${n}`].setAttribute('class',`fadeOut animated`)
-        this.refs[`myli${n-1}`].setAttribute('class',`fadeIn animated`)
+        this.refs[`myli${n}`].setAttribute('class',`fadeOut animated`);
+        this.refs[`myli${n-1}`].setAttribute('class',`fadeIn animated`);
         this.setState({n:n-1})
 
     }
@@ -64,10 +64,10 @@ class PicList extends Component {
             return(
 
                     <li ref={`myli${v.id}`} key={v.id}>
-                    <img  height='100%' src={require('../'+v.src+'.jpg')} alt={v.id}/>
+                        <img  height='100%' src={require('../' + v.src + '.jpg')} alt={v.src}/>
                     </li>
             )
-        })
+        });
         let filter = this.props.blur ? 'blur(30px)' : '';
 
         return(

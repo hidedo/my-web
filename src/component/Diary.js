@@ -4,8 +4,7 @@
 import React, { Component } from 'react';
 import '../css/animate.css'
 import '../css/Diary.css'
-import classNames from 'classnames';
-import logo from '../img/logo.jpg'
+
 import { Link } from 'react-router-dom'
 
 class Diary extends Component {
@@ -17,10 +16,10 @@ class Diary extends Component {
 
     }
     handleClickRight(){
-        clearInterval(this.timer)
+        clearInterval(this.timer);
 
         let start = this.refs.diary.scrollLeft;
-        let lastDom = this.refs.diary.lastChild
+        let lastDom = this.refs.diary.lastChild;
 
         this.timer=setInterval(()=> {
             if ((this.refs.diary.scrollLeft - start) === 500||Math.round(lastDom.getBoundingClientRect().left)+lastDom.offsetWidth===window.innerWidth) {

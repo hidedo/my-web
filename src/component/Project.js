@@ -5,9 +5,9 @@ import React, { Component } from 'react';
 import '../css/Project.css'
 import '../css/animate.css'
 import PicList from './PicList'
-import classNames from 'classnames'
+
 import '../css/fontello-4aba2eed/css/fontello.css'
-import logo from '../img/logo.jpg'
+
 import { Link } from 'react-router-dom'
 
 class Project extends Component {
@@ -95,9 +95,6 @@ class Project extends Component {
     }
 
 class DetailPic extends PicList {
-    constructor(props) {
-        super(props);
-    }
 
     handleClick(){
         this.props.callbackParent(false);
@@ -111,7 +108,7 @@ class DetailPic extends PicList {
 
                 return (
                     <li ref={`myli${v.id}`} key={v.id}>
-                        <img  height='100%' src={require('../'+v.src+'.jpg')} alt=''/>
+                        <img  height='100%' src={require('../' + v.src + '.jpg')} alt={v.src}/>
 
                     </li>
                 )

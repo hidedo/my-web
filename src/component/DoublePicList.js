@@ -4,8 +4,6 @@
 import React, { Component } from 'react';
 import '../css/DoublePicList.css'
 import '../css/animate.css'
-import classNames from 'classnames'
-import logo from '../img/logo.jpg'
 import { Link } from 'react-router-dom'
 
 
@@ -31,7 +29,7 @@ class DoublePicList extends Component {
             this.setState({n: 1})
             return;
         }
-        ;
+
 
         this.refs[`myli1${n}`].setAttribute('class', `fadeOut animated`)
         this.refs[`myli2${n}`].setAttribute('class', `fadeOut animated`)
@@ -47,7 +45,7 @@ class DoublePicList extends Component {
             if(!this.refs[`myli1${n-1}`]){
 
                 return;
-            };
+            }
 
             this.refs[`myli1${n}`].setAttribute('class',`fadeOut animated`)
             this.refs[`myli2${n}`].setAttribute('class',`fadeOut animated`)
@@ -73,7 +71,7 @@ class DoublePicList extends Component {
 
             return (
                 <li ref={`myli1${v.id}`} key={v.id}>
-                    <img  height='100%' src={require('../' + v.src + '.jpg')}/>
+                    <img  height='100%' src={require('../' + v.src + '.jpg')} alt={v.src}/>
                 </li>
             );
         });
@@ -82,7 +80,7 @@ class DoublePicList extends Component {
 
             return(
                 <li ref={`myli2${v.id}`} key={v.id}>
-                    <img  height='100%' src={require('../'+v.src+'.jpg')}/>
+                    <img  height='100%' src={require('../' + v.src + '.jpg')} alt={v.src}/>
                 </li>
             )
         });

@@ -4,7 +4,6 @@
 import React, { Component } from 'react';
 import '../css/Info.css'
 import '../css/animate.css'
-import classNames from 'classnames'
 import '../css/fontello-4aba2eed/css/fontello.css'
 import '../css/Navbar.css'
 import { Link } from 'react-router-dom'
