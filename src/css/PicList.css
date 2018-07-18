@@ -43,6 +43,7 @@
     left: 0;
     top: 0;
     z-index: 1;
+    cursor:w-resize;
 }
 
 .picList .ul .right {
@@ -52,5 +53,5 @@
     right: 0;
     top: 0;
     z-index: 1;
-
+    cursor:e-resize;
 }
