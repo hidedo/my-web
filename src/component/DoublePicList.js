@@ -45,7 +45,7 @@ class DoublePicList extends Component {
             if(!this.refs[`myli1${n-1}`]){
 
                 return;
-            }
+            };
 
             this.refs[`myli1${n}`].setAttribute('class',`fadeOut animated`)
             this.refs[`myli2${n}`].setAttribute('class',`fadeOut animated`)
