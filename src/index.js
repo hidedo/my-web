@@ -14,9 +14,9 @@ ReactDOM.render((<HashRouter>
         <div>
 
         <Route exact path="/" component={Home}/>
-        <Route path="/project" component={Project}/>
-        <Route path="/double" component={DoublePicList}/>
-        <Route path="/diary" component={Diary}/>
+        <Route exact path="/project" component={Project}/>
+        <Route exact path="/double" component={DoublePicList}/>
+        <Route exact path="/diary" component={Diary}/>
 
             </div>
     </HashRouter>

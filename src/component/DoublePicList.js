@@ -71,7 +71,7 @@ class DoublePicList extends Component {
 
             return (
                 <li ref={`myli1${v.id}`} key={v.id}>
-                    <img  height='100%' src={require('../' + v.src + '.jpg')} alt={v.src}/>
+                    <img  height='100%' src={`/image/${v.src}.jpg`} alt={v.src}/>
                 </li>
             );
         });
@@ -80,14 +80,14 @@ class DoublePicList extends Component {
 
             return(
                 <li ref={`myli2${v.id}`} key={v.id}>
-                    <img  height='100%' src={require('../' + v.src + '.jpg')} alt={v.src}/>
+                    <img  height='100%' src={`/image/${v.src}.jpg`} alt={v.src}/>
                 </li>
             )
         });
         let filter = this.props.blur ? 'blur(10px)' : '';
         return(
             <div style={{'WebkitFilter':filter}} className='doublePicList'>
-                <Link to='/' className='link'><span className='close'><i className='icon-cancel'></i></span></Link>
+
 
                 <ul className='ul'>
                     <span className='left' onClick={this.handleClickLeft.bind(this)}></span>
@@ -99,7 +99,7 @@ class DoublePicList extends Component {
                     <span className='right'  onClick={this.handleClickRight.bind(this)}></span>
             {imglist2}
                 </ul>
-
+                <Link to='/' className='link'><span className='close'><i className='icon-cancel'></i></span></Link>
             </div>
         )
     }

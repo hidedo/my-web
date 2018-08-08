@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import '../css/Info.css'
 import '../css/animate.css'
 import classNames from 'classnames'
-import '../css/fontello-6411c29f/css/fontello.css'
+import '../css/fontello-7529c44d/css/font.css'
 
 
 class Info extends Component {
@@ -68,7 +68,7 @@ class Page extends Component {
     render() {
         const className = classNames({
             'slideInRight': this.props.status,
-            'animated': true,
+            'animated1': true,
             'slideOutRight': (!this.props.status) && this.props.clicked,
             'hide': !this.props.clicked,
             'page': true

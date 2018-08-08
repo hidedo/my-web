@@ -5,10 +5,26 @@ import React, { Component } from 'react';
 import '../css/Project.css'
 import '../css/animate.css'
 import PicList from './PicList'
-import '../css/fontello-6411c29f/css/fontello.css'
+import '../css/fontello-7529c44d/css/font.css'
 
 import { Link } from 'react-router-dom'
 
+function imagesLoaded(parentNode){
+
+    const imgElements = [...parentNode.querySelectorAll('img')];
+
+    for (let i=0;i<imgElements.length;i++){
+        const img = imgElements[i];
+        if(!img.complete){
+            return false;
+
+        }
+
+    }
+
+    return true;
+
+}
 class Project extends Component {
     constructor(props) {
         super(props);
@@ -17,28 +33,34 @@ class Project extends Component {
             blur:'',
             detailImgArrs:[],
             detailImgArr:[],
-            imgArr:[]
+            imgArr:[],
+            loading:true
+
+
+
         }
     }
-    handleClick(value){
-        this.setState({show:!this.state.show});
-        this.setState({blur:'blur(30px)'});
-        this.setState({detailImgArr:this.state.detailImgArrs[value-1]})
+    handleClick(value) {
+        if (this.state.loading === false) {
+            this.setState({show: !this.state.show});
+            this.setState({blur: 'blur(30px)'});
+            this.setState({detailImgArr: this.state.detailImgArrs[value - 1]})
+        }
     }
     handleEnter(...params){
-
+    if(this.state.loading===false) {
         this.refs[params[0]].firstChild.style.opacity = '1'
         this.refs[params[0]].childNodes[1].style.opacity = '0.5';
-
+    }
 
 
 
     }
     handleLeave(...params){
-
+    if(this.state.loading===false) {
         this.refs[params[0]].firstChild.style.opacity = '0'
         this.refs[params[0]].childNodes[1].style.opacity = '1'
-
+    }
 
 
 
@@ -48,20 +70,45 @@ class Project extends Component {
 
         this.setState({show:false,blur:''});
     }
+    handleLoaded(...params){
+       this.setState({loading:!imagesLoaded(this.refs.project)})
+
+
+    }
     onChildChanged(value){
         this.setState({
             show:value,
             blur:''
         })
     }
-    componentWillMount(){
+
+
+
+    componentWillMount() {
         fetch('./conf.json')
             .then(res => res.json())
-            .then(data => this.setState({imgArr:data.project,detailImgArrs:Object.values(data.projectDetail)}))
+            .then(data => {this.setState({imgArr: data.project, detailImgArrs: Object.values(data.projectDetail)});
+                //return(this.state.imgArr)
+            }
+        )
+            //.then(imgArr=>{
+            //    const preload =[];
+            //
+            //    for(let i=0;i<imgArr.length;i++){
+            //        preload[i]=new Image();
+            //        preload[i].src=`/image/${imgArr[i].src}.jpg`
+            //    };
+            //    const preloadsrc = preload.map(item=>item.src)
+            //    this.setState({preloadsrc:preloadsrc});
+            //    })
             .catch((e) => console.log(e.message))
 
 
-    }
+        }
+
+
+
+
 
 
         render(){
@@ -70,8 +117,9 @@ class Project extends Component {
                 return(
                     <div style={{'width':v.width/v.scale,'height':v.height/v.scale,'margin':v.margin}} key={v.id} ref={`${v.id}`} onClick={this.handleClick.bind(this,v.id)} onMouseEnter={this.handleEnter.bind(this,`${v.id}`)} onMouseLeave={this.handleLeave.bind(this,`${v.id}`)}>
 
-                        <span><i></i>{v.name}</span>
-                        <img width='100%' src={require('../'+v.src+'.jpg')} alt={v.src} />
+                        <span><span></span>{v.name}</span>
+
+                    <img style={{opacity:this.state.loading?0:1}} ref={`img${v.id}`} onLoad={this.handleLoaded.bind(this,v.id)}  width='100%' src={`/image/${v.src}.jpg`} alt={v.src} />
                     </div>
                 )
 
@@ -82,7 +130,7 @@ class Project extends Component {
 
         <div className='wrapper'>
 
-            <div className='project' style={{'WebkitFilter':this.state.blur}}>
+            <div ref='project' className='project' style={{'WebkitFilter':this.state.blur}}>
             <Link to='/' className='link'><span className='close'><i className='icon-cancel'></i></span></Link>
         {imglist}
 
@@ -107,7 +155,7 @@ class DetailPic extends PicList {
 
                 return (
                     <li ref={`myli${v.id}`} key={v.id}>
-                        <img  height='100%' src={require('../' + v.src + '.jpg')} alt={v.src}/>
+                        <img  height='100%' src={`/image/${v.src}.jpg`} alt={v.src}/>
 
                     </li>
                 )

@@ -1,17 +1,22 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "calluna-sans",Sans-serif;
-  font-size:small;
+  font-family: "Gill Sans","Gill Sans1","calluna-sans",Sans-serif;
+
 
 }
 @font-face{
   font-family:"calluna-sans";
   src:url("CallunaSansRegular.otf");
+
 }
 @font-face{
   font-family:"myFont";
   src:url("../AGaramondPro-Regular.otf");
+}
+@font-face{
+  font-family:"Gill Sans1";
+  src:url("GillSansMTPro-Medium.otf");
 }
 html, body{
   height:100%;

@@ -6,7 +6,7 @@ import Info from './Info'
 import PicList from './PicList'
 import Navbar from './Navbar'
 import '../css/Home.css'
-import logo from '../img/logo.jpg'
+import logo from '../logo.jpg'
 
 class Home extends Component {
     constructor(props) {
@@ -23,7 +23,7 @@ class Home extends Component {
     render(){
         return(
             <div className='home'>
-                <img width='102px' height='15px' className='logo' src={logo} alt='logo'/>
+                <a href='/'><img width='102px' height='15px' className='logo' src={logo} alt='logo'/></a>
                 <PicList blur={this.state.isBlur}/>
                 <Info callbackParent={this.onChildChanged.bind(this)}/>
                 <Navbar blur={this.state.isBlur}/>

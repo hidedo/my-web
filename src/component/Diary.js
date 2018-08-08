@@ -72,7 +72,7 @@ class Diary extends Component {
         const imgArr = this.state.imgArr;
         const imglist = imgArr.map(v =>{
             return(
-                <div key={v.id} style={{'width':v.width/v.scale,'height':v.height/v.scale}}><img width='100%' src={require('../'+v.src+'.jpg')} alt={v.id} /></div>
+                <div key={v.id} style={{'width':v.width/v.scale,'height':v.height/v.scale}}><img width='100%' src={`/image/${v.src}.jpg`} alt={v.id} /></div>
             )
 
         });

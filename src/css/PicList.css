@@ -15,7 +15,7 @@
 .picList .ul {
     list-style: none;
     width:80%;
-    height:90%;
+    height:80%;
 
     position: relative;
 
@@ -54,4 +54,7 @@
     top: 0;
     z-index: 1;
     cursor:e-resize;
+}
+.notdisplay{
+    display:none;
 }

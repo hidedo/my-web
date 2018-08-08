@@ -1,6 +1,6 @@
 .navbar{
     height:80px;
-    width:14px;
+    width:13px;
     position:absolute;
     top:39%;
     left:2.4%;
@@ -16,6 +16,7 @@
 }
 
 .navbar li{
+    height:18px;
     cursor: pointer;
     list-style:none;
     background-color: #000000;
@@ -30,7 +31,5 @@
     color: #000000;
 }
 
-.navbar a:hover{
-    color:silver;
-}
+
 
