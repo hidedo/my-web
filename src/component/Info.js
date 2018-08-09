@@ -20,7 +20,7 @@ class Info extends Component {
 
 ;
     handleClick() {
-        this.setState({isClicked: true});
+        this.setState({isClicked: !this.state.isClicked});
 
         this.setState({isOpen: !this.state.isOpen});
         this.props.callbackParent(!this.state.isOpen);
@@ -35,7 +35,7 @@ class Info extends Component {
                 <div className='info'  onClick = {this.handleClick.bind(this)}>
                 {this.state.isOpen ? <i className ='icon-cancel'></i> : <i className ='icon-plus'></i>}
                 </div>
-                <Page status = {this.state.isOpen} clicked={this.state.isClicked}/>
+                <Page show = {this.state.isOpen} clicked={this.state.isClicked}/>
 
             </div>
         );
@@ -67,9 +67,9 @@ class Page extends Component {
 
     render() {
         const className = classNames({
-            'slideInRight': this.props.status,
+            'slideInRight': this.props.show,
             'animated1': true,
-            'slideOutRight': (!this.props.status) && this.props.clicked,
+            // 'slideOutRight': (!this.props.show) && this.props.clicked,
             'hide': !this.props.clicked,
             'page': true
         })

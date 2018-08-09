@@ -9,20 +9,14 @@ import '../css/fontello-7529c44d/css/font.css'
 
 import { Link } from 'react-router-dom'
 
-function imagesLoaded(parentNode){
+function imagesLoaded(parentNode,id){
 
-    const imgElements = [...parentNode.querySelectorAll('img')];
-
-    for (let i=0;i<imgElements.length;i++){
-        const img = imgElements[i];
-        if(!img.complete){
-            return false;
-
-        }
-
+    const imgElement = parentNode.querySelectorAll('img')[id-1];
+    if (imgElement.complete){
+        return {result:true,imgObj:imgElement};
     }
 
-    return true;
+
 
 }
 class Project extends Component {
@@ -36,19 +30,18 @@ class Project extends Component {
             imgArr:[],
             loading:true
 
-
-
         }
     }
-    handleClick(value) {
-        if (this.state.loading === false) {
+    handleClick(...params) {
+
+        if(this.refs[params[1]].childNodes[1].complete) {
             this.setState({show: !this.state.show});
             this.setState({blur: 'blur(30px)'});
-            this.setState({detailImgArr: this.state.detailImgArrs[value - 1]})
+            this.setState({detailImgArr: this.state.detailImgArrs[params[0] - 1]})
         }
     }
     handleEnter(...params){
-    if(this.state.loading===false) {
+    if(this.refs[params[0]].childNodes[1].complete) {
         this.refs[params[0]].firstChild.style.opacity = '1'
         this.refs[params[0]].childNodes[1].style.opacity = '0.5';
     }
@@ -57,7 +50,7 @@ class Project extends Component {
 
     }
     handleLeave(...params){
-    if(this.state.loading===false) {
+        if(this.refs[params[0]].childNodes[1].complete) {
         this.refs[params[0]].firstChild.style.opacity = '0'
         this.refs[params[0]].childNodes[1].style.opacity = '1'
     }
@@ -70,8 +63,12 @@ class Project extends Component {
 
         this.setState({show:false,blur:''});
     }
-    handleLoaded(...params){
-       this.setState({loading:!imagesLoaded(this.refs.project)})
+    handleLoad(...params){
+       const obj = imagesLoaded(this.refs.project,params[0]);
+       if(obj.result){
+       obj.imgObj.style.opacity=1;
+
+       }
 
 
     }
@@ -115,11 +112,11 @@ class Project extends Component {
 
             const imglist = this.state.imgArr.map(v =>{
                 return(
-                    <div style={{'width':v.width/v.scale,'height':v.height/v.scale,'margin':v.margin}} key={v.id} ref={`${v.id}`} onClick={this.handleClick.bind(this,v.id)} onMouseEnter={this.handleEnter.bind(this,`${v.id}`)} onMouseLeave={this.handleLeave.bind(this,`${v.id}`)}>
+                    <div style={{'width':v.width/v.scale,'height':v.height/v.scale,'margin':v.margin}} key={v.id} ref={`${v.id}`} onClick={this.handleClick.bind(this,v.id,`${v.id}`)} onMouseEnter={this.handleEnter.bind(this,`${v.id}`)} onMouseLeave={this.handleLeave.bind(this,`${v.id}`)}>
 
                         <span><span></span>{v.name}</span>
 
-                    <img style={{opacity:this.state.loading?0:1}} ref={`img${v.id}`} onLoad={this.handleLoaded.bind(this,v.id)}  width='100%' src={`/image/${v.src}.jpg`} alt={v.src} />
+                    <img style={{opacity:this.state.loading?0:1}}  onLoad={this.handleLoad.bind(this,v.id)}  width='100%' src={`/image/${v.src}.jpg`} alt={v.src} />
                     </div>
                 )
 
