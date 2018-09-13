@@ -13,7 +13,8 @@ class DoublePicList extends Component {
         this.state = {
             n:1,
             imgArr1:[],
-            imgArr2:[]
+            imgArr2:[],
+            length:0,
         }
     }
 
@@ -27,15 +28,16 @@ class DoublePicList extends Component {
             this.refs[`myli1${n}`].setAttribute('class', `fadeOut animated`)
             this.refs[`myli2${n}`].setAttribute('class', `fadeOut animated`)
             this.setState({n: 1})
-            return;
+
         }
 
-
-        this.refs[`myli1${n}`].setAttribute('class', `fadeOut animated`)
-        this.refs[`myli2${n}`].setAttribute('class', `fadeOut animated`)
-        this.refs[`myli1${n + 1}`].setAttribute('class', `fadeIn animated`)
-        this.refs[`myli2${n + 1}`].setAttribute('class', `fadeIn animated`)
-        this.setState({n: n + 1})
+        else {
+            this.refs[`myli1${n}`].setAttribute('class', `fadeOut animated`)
+            this.refs[`myli2${n}`].setAttribute('class', `fadeOut animated`)
+            this.refs[`myli1${n + 1}`].setAttribute('class', `fadeIn animated`)
+            this.refs[`myli2${n + 1}`].setAttribute('class', `fadeIn animated`)
+            this.setState({n: n + 1})
+        }
     }
 
 
@@ -43,21 +45,25 @@ class DoublePicList extends Component {
             let n = this.state.n;
 
             if(!this.refs[`myli1${n-1}`]){
-
-                return;
-            };
-
-            this.refs[`myli1${n}`].setAttribute('class',`fadeOut animated`)
-            this.refs[`myli2${n}`].setAttribute('class',`fadeOut animated`)
-            this.refs[`myli1${n-1}`].setAttribute('class',`fadeIn animated`)
-            this.refs[`myli2${n-1}`].setAttribute('class',`fadeIn animated`)
-            this.setState({n:n-1})
+               this.refs[`myli1${this.state.length}`].setAttribute('class',`fadeIn animated`);
+               this.refs[`myli2${this.state.length}`].setAttribute('class',`fadeIn animated`);
+               this.refs[`myli1${n}`].setAttribute('class',`fadeOut animated`);
+               this.refs[`myli2${n}`].setAttribute('class',`fadeOut animated`);
+               this.setState({n: this.state.length})
+            }
+            else {
+                this.refs[`myli1${n}`].setAttribute('class', `fadeOut animated`)
+                this.refs[`myli2${n}`].setAttribute('class', `fadeOut animated`)
+                this.refs[`myli1${n - 1}`].setAttribute('class', `fadeIn animated`)
+                this.refs[`myli2${n - 1}`].setAttribute('class', `fadeIn animated`)
+                this.setState({n: n - 1})
+            }
         }
 
     componentWillMount(){
         fetch('./conf.json')
             .then(res => res.json())
-            .then(data => this.setState({imgArr1:data.double.imgArr1,imgArr2:data.double.imgArr2}))
+            .then(data => this.setState({imgArr1:data.double.imgArr1,imgArr2:data.double.imgArr2,length:data.double.imgArr1.length}))
             .catch((e) => console.log(e.message))
 
 
@@ -68,18 +74,18 @@ class DoublePicList extends Component {
 
         const imglist1 = this.state.imgArr1.map(v =>{
 
-
+            let index = this.state.imgArr1.indexOf(v)+1
             return (
-                <li ref={`myli1${v.id}`} key={v.id}>
+                <li ref={`myli1${index}`} key={index}>
                     <img  height='100%' src={`/image/${v.src}.jpg`} alt={v.src}/>
                 </li>
             );
         });
         const imglist2 = this.state.imgArr2.map(v =>{
-
+            let index = this.state.imgArr2.indexOf(v)+1
 
             return(
-                <li ref={`myli2${v.id}`} key={v.id}>
+                <li ref={`myli2${index}`} key={index}>
                     <img  height='100%' src={`/image/${v.src}.jpg`} alt={v.src}/>
                 </li>
             )

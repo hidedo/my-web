@@ -3,7 +3,7 @@
     height:100%;
     flex-direction: row;
     align-items: center;
-    display: -webkit-flex;
+    display: flex;
     overflow-y: hidden;
     overflow-x:scroll;
     position: relative;
@@ -11,8 +11,8 @@
 
 }
 
-.diary div{
-    flex-shrink:0;
+.diary div:not(.LazyLoad){
+    flex:none;
     margin-right:10%;
 }
 

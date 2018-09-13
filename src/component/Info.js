@@ -20,9 +20,11 @@ class Info extends Component {
 
 ;
     handleClick() {
-        this.setState({isClicked: !this.state.isClicked});
-
+        // this.timer && clearTimeout(this.timer);
+        this.setState({isClicked: true});
         this.setState({isOpen: !this.state.isOpen});
+        // this.timer = setTimeout(()=>this.props.callbackParent(this.state.isOpen),100);
+
         this.props.callbackParent(!this.state.isOpen);
     }
 
@@ -69,7 +71,7 @@ class Page extends Component {
         const className = classNames({
             'slideInRight': this.props.show,
             'animated1': true,
-            // 'slideOutRight': (!this.props.show) && this.props.clicked,
+            'slideOutRight': (!this.props.show) && this.props.clicked,
             'hide': !this.props.clicked,
             'page': true
         })

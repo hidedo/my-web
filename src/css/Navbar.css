@@ -9,7 +9,7 @@
 .navbar ul{
     height:inherit;
     width:inherit;
-    display:-webkit-inline-flex;
+    display:inline-flex;
     flex-direction: column;
     justify-content: space-between;
 

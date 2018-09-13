@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import '../css/animate.css'
 import '../css/Diary.css'
 import { Link } from 'react-router-dom'
+import LazyLoad from 'react-lazy-load'
 
 class Diary extends Component {
     constructor(props) {
@@ -71,8 +72,14 @@ class Diary extends Component {
     render(){
         const imgArr = this.state.imgArr;
         const imglist = imgArr.map(v =>{
+            let index = this.state.imgArr.indexOf(v)+1
             return(
-                <div key={v.id} style={{'width':v.width/v.scale,'height':v.height/v.scale}}><img width='100%' src={`/image/${v.src}.jpg`} alt={v.id} /></div>
+                <div className="filler" key={index} style={{'width':v.width/v.scale,'height':v.height/v.scale}}>
+
+                    <LazyLoad>
+                    <img width='100%' src={`/image/${v.src}.jpg`} alt={v.src} />
+                    </LazyLoad>
+                </div>
             )
 
         });

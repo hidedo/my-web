@@ -19,7 +19,8 @@ class PicList extends Component {
         }
     }
 
-    handleClickRight(){
+    handleClickRight(e){
+        e.stopPropagation()
         let n = this.state.n;
 
         if(!this.refs[`myli${n+1}`]){
@@ -34,8 +35,8 @@ class PicList extends Component {
         this.setState({n:n+1})
 
     }
-    handleClickLeft(){
-
+    handleClickLeft(e){
+        e.stopPropagation()
         let n = this.state.n;
 
         if(!this.refs[`myli${n-1}`]){
@@ -59,11 +60,11 @@ class PicList extends Component {
     render() {
 
         const imglist = this.state.imgArr.map(v =>{
-
+            let index = this.state.imgArr.indexOf(v)+1
 
             return(
 
-                    <li ref={`myli${v.id}`} key={v.id}>
+                    <li ref={`myli${index}`} key={index}>
                         <img  height='100%' src={`/image/${v.src}.jpg`} alt={v.src}/>
                     </li>
             )
@@ -71,7 +72,7 @@ class PicList extends Component {
         let filter = this.props.blur ? 'blur(30px)' : '';
 
         return(
-        <div style={{'WebkitFilter':filter}} className='picList'>
+        <div style={{'filter':filter,'transition':'filter linear 0.2s'}} className='picList'>
 
             <ul  className='ul'>
                 <span className='left' onClick={this.handleClickLeft.bind(this)}></span>
