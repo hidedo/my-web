@@ -5,8 +5,9 @@ import Home from './component/Home'
 import Project from './component/Project'
 import Diary from './component/Diary'
 import DoublePicList from './component/DoublePicList'
+import MobileInfo from './component/MobileInfo'
 import registerServiceWorker from './registerServiceWorker';
-import {  Route, HashRouter} from 'react-router-dom'
+import {  Route, HashRouter,BrowserRouter} from 'react-router-dom'
 
 
 
@@ -17,8 +18,8 @@ ReactDOM.render((<HashRouter>
         <Route exact path="/project" component={Project}/>
         <Route exact path="/double" component={DoublePicList}/>
         <Route exact path="/diary" component={Diary}/>
-
-            </div>
+        <Route exact path="/info" component={MobileInfo}/>
+        </div>
     </HashRouter>
     ),
     document.getElementById('root'));

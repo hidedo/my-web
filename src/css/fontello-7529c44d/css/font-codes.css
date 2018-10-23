@@ -1,3 +1,7 @@
 
+.icon-mail:before { content: '\e800'; } /* '' */
 .icon-plus:before { content: '\e900'; } /* '' */
 .icon-cancel:before { content: '\e901'; } /* '' */
+.icon-menu:before { content: '\f0c9'; } /* '' */
+.icon-instagram:before { content: '\f16d'; } /* '' */
+.icon-tumblr-squared:before { content: '\f174'; } /* '' */

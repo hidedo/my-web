@@ -1,8 +1,13 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "Gill Sans","Gill Sans1","calluna-sans",Sans-serif;
+  font-family: "Gill Sans","calluna-sans",Sans-serif;
 
+
+}
+@font-face{
+  font-family:"Quarto-Light";
+  src:url("Quarto-Light.otf");
 
 }
 @font-face{
@@ -11,18 +16,34 @@
 
 }
 @font-face{
-  font-family:"myFont";
-  src:url("../AGaramondPro-Regular.otf");
+  font-family:"AGaramondPro";
+  src:url("AGaramondPro-Regular.otf");
 }
 @font-face{
-  font-family:"Gill Sans1";
+  font-family:"Gill Sans";
   src:url("GillSansMTPro-Medium.otf");
 }
-html, body{
+html{
+   height:100%;
+   font-size: 62.5%;
+ }
+body{
   height:100%;
+  font-size: 1.6rem;
 }
+
+
 
 #root,#root >div{
   height:inherit;
 }
 
+.mobileHeader {
+  display:none;
+}
+
+@media (max-width: 500px){
+  /*html{*/
+    /*font-size:70.3%*/
+  /*}*/
+}

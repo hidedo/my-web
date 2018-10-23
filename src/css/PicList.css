@@ -57,3 +57,33 @@
 .notdisplay{
     display:none;
 }
+
+@media (max-width: 500px){
+
+    .picList .ul li {
+        position: relative;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height:auto;
+        margin-top:10%;
+
+    }
+    .picList .ul li:not(:nth-child(3)) {
+         opacity: 1;
+    }
+    .picList img{
+        width:100%;
+        height:auto;
+    }
+    .picList .ul{
+        overflow:scroll;
+        width: 100%;
+        height: 90%;
+        top:5%
+    }
+    .picList .ul .right, .picList .ul .left{
+        display:none;
+    }
+
+}

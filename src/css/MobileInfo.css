@@ -1,0 +1,17 @@
+@media (max-width: 500px) {
+    .text2 {
+        position: absolute;
+        top: 16%;
+        right: 5%;
+        width: 40%;
+        font-size: 1.4rem;
+    }
+    .text1 {
+        position: absolute;
+        top: 16%;
+        left: 5%;
+        width: 40%;
+        font-size: 1.4rem;
+    }
+
+}

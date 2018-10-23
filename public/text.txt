@@ -1,4 +1,4 @@
-<p style='font-size:16px'>CONTACT</p>
+<p style='font-size:1.6rem'>CONTACT</p>
 <br/>
 <p>For all enquiries,</p>
 <p>
@@ -16,7 +16,7 @@
 <a href="https://galleryphoto.thebase.in" target="_blank"> print _japan</a>
 </p>
 <br/>
-<p style='font-size:16px'>BOOKS</p>
+<p style='font-size:1.6rem'>BOOKS</p>
 <br/>
 <p> / NO WORD FROM ABOVE / </p>
 <p>Self published in September, 2017 *sold out</p>
@@ -25,7 +25,7 @@
 <p>/ AFTER THE WIND /</p>
 <p>Published by Atem Books, 2010 *sold out</p>
 <br/>
-<p style='font-size:16px'>INTERVIEWS</p>
+<p style='font-size:1.6rem'>INTERVIEWS</p>
 <br/>
 <a href="http://www.vogue.it/fotografia/fotografi-emergenti/2018/06/13/labs-new-artists-ii/" target="_blank"> Vogue Italia *</a>
 <br/>
@@ -63,7 +63,7 @@
 <a href="http://www.art-magazin.de/kunst/33780/akt_now_aktfotografie" target="_blank"> ART</a>
 </p>
 <br/>
-<p style='font-size:16px'>RECENT EXHIBITIONS</p>
+<p style='font-size:1.6rem'>RECENT EXHIBITIONS</p>
 <br/>June 13, 2018 *
 <br/>Labs New Artists II, Red Hook Labs, New York, US
 <br/>
@@ -90,7 +90,7 @@
 <br/>
 <br/>
 text2dontmove
-<p style='font-size:16px'>SELECTED FEATURES</p>
+<p style='font-size:1.6rem'>SELECTED FEATURES</p>
 <br/>
 <p><a href="http://www.booooooom.com/?s=li+hui" target="_blank">BOOOOOOOM!</a></p>
 <p><a href="http://theindex.la/artist/li-hui/" target="_blank">Index. *</a></p>
@@ -114,11 +114,11 @@ text2dontmove
 <p>TAG TAG TAG</p>
 <p>MOSSLESS</p>
 <br/>
-<p style='font-size:16px'>SELECTED PUBLICATIONS</p>
+<p style='font-size:1.6rem'>SELECTED PUBLICATIONS</p>
 <br/>
 <p>PONCZ magazine, VOSTOK Magazine _Korea, NIDO Magazine _Germany, DONNA Magazine _Germany, Oh Comely Magazine _London, WHITEWALL Magazine _US, Fiasco Magazine _London, Union Magazine _Japan, Kinki Magazine _Switzerland, AVEC Magazine _Korea, Stern Magazine _Germany, Progresso Fotografico _Italy, 0_100_05 Editions _Milan, Eloquence Magazine _Korea, PERJUS Magazine _London, HANAKO Magazine _Japan, Bedspreadzine _London, Pig Magazine _Milan, Frankie Magazine _Australia, If you leave, Paper Light _Sweden, elsewhere Magazine _China, LINC Magazine _Japan, Paráfrasis revista Cover _Mexico, DUST &amp; DESSERT Magazine _Australia, FAVOURITE zine _California, 100 _USA, TEEN EYE Magazine _London, ROMKA Magazine _Germany, Carpaccio Magazine _Spain, Chikismiqui Magazine _Argentina, Pretty Litter Magazine _London, One Is All _China</p>
 <br/>
-<p style='font-size:medium'>COMMISSIONS</p>
+<p style='font-size:1.6rem'>COMMISSIONS</p>
 <p>Wallflower _Japan, Mariana in our heads _Japan, Steve Gibbs _UK, Hibou _US, Tropic Harbour _Canada, Tim Gerwing _Canada, Zmitser Von Holzman _Russia, Aplot _Austria, The Smile of Shoko' witten by Eun-young Choi _Korea, 'Microcosmi' witten by Claudio Magris _Korea, 'Red' witten by Rio Shimamoto _Japan, Agonist Parfums _Sweden, TID WATCHES _Stockholm, Feorran AW 2018 _New York, Lousie Misha SS 2015 _Paris</p>
 <br/>
 <br/><br/>

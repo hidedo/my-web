@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import '../css/PicList.css'
 import '../css/animate.css'
-
+import LazyLoad from 'react-lazy-load'
 
 
 
@@ -59,26 +59,40 @@ class PicList extends Component {
     }
     render() {
 
+
         const imglist = this.state.imgArr.map(v =>{
             let index = this.state.imgArr.indexOf(v)+1
 
+            if (window.screen.availWidth < 500){
+
             return(
 
-                    <li ref={`myli${index}`} key={index}>
-                        <img  height='100%' src={`/image/${v.src}.jpg`} alt={v.src}/>
+                    <li className={'filler'} ref={`myli${index}`} key={index}>
+                        <LazyLoad>
+                        <img  height='100%' src={`/image/m-index-pic/${v.src}.jpg`} alt={v.src}/>
+                        </LazyLoad>
                     </li>
-            )
+
+            )}
+            else{
+                return (<li ref={`myli${index}`} key={index}>
+
+                        <img  height='100%' src={`/image/index-pic/${v.src}.jpg`} alt={v.src}/>
+
+                </li>)
+            }
         });
         let filter = this.props.blur ? 'blur(30px)' : '';
 
         return(
-        <div style={{'filter':filter,'transition':'filter linear 0.2s'}} className='picList'>
+        <div style={{'filter':filter,'transition':'filter linear 0.2s'}} className={'picList'}>
 
-            <ul  className='ul'>
+            <ul  className={'ul'}>
                 <span className='left' onClick={this.handleClickLeft.bind(this)}></span>
                 <span className='right'  onClick={this.handleClickRight.bind(this)}></span>
             {imglist}
             </ul>
+
 
         </div>
         )

@@ -31,5 +31,11 @@
     color: #000000;
 }
 
+@media (max-width: 500px){
+    .navbar ul{
+        display:none;
+    }
+}
+
 
 

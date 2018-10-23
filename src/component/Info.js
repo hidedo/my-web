@@ -20,10 +20,10 @@ class Info extends Component {
 
 ;
     handleClick() {
-        // this.timer && clearTimeout(this.timer);
+
         this.setState({isClicked: true});
         this.setState({isOpen: !this.state.isOpen});
-        // this.timer = setTimeout(()=>this.props.callbackParent(this.state.isOpen),100);
+
 
         this.props.callbackParent(!this.state.isOpen);
     }

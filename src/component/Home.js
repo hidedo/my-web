@@ -7,6 +7,7 @@ import PicList from './PicList'
 import Navbar from './Navbar'
 import '../css/Home.css'
 import logo from '../logo.jpg'
+import MobileHeader from './MobileHeader'
 
 class Home extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class Home extends Component {
                 <PicList blur={this.state.isBlur}/>
                 <Info callbackParent={this.onChildChanged.bind(this)}/>
                 <Navbar blur={this.state.isBlur}/>
-
+                <MobileHeader/>
             </div>
         )
     }

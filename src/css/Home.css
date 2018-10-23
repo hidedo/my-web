@@ -13,3 +13,12 @@
     z-index: 3;
     cursor:pointer;
 }
+
+
+
+
+@media (max-width: 500px){
+    .logo{
+        display:none;
+    }
+}

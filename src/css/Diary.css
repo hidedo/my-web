@@ -6,7 +6,7 @@
     display: flex;
     overflow-y: hidden;
     overflow-x:scroll;
-    position: relative;
+    position: absolute;
 
 
 }
@@ -35,39 +35,40 @@
 
 
 
-.diary div:nth-child(5){
-    width:166px;
-    height:250px;
 
-}
+@media (max-width: 500px){
 
-.diary div:nth-child(6){
-    width:332px;
-    height:500px;
+    .diary {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height:90%;
+        width:100%;
+        position:absolute;
+        top:10%;
+        overflow:scroll;
 
-}
-.diary div:nth-child(7){
-    width:332px;
-    height:500px;
 
-}
-.diary div:nth-child(8){
-    width:332px;
-    height:500px;
+    }
+    .close{
+        display:none;
+    }
 
-}
-.diary div:nth-child(9){
-    width:332px;
-    height:500px;
+    .diary img{
+        width:100%;
+        height:auto;
 
-}
-.diary div:nth-child(10){
-    width:166px;
-    height:250px;
+    }
 
-}
-.diary div:nth-child(11){
-    width:500px;
-    height:332px;
+    .diary .right, .diary .left{
+        display:none;
+    }
+    .diary .filler{
+        margin-top:10%;
+        width:100%!important;
+    }
+    .diary div:not(.LazyLoad){
+        margin-right:0;
+    }
 
 }

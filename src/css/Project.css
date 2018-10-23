@@ -1,3 +1,4 @@
+
 .project{
     display: flex;
     flex-flow: row wrap;
@@ -21,7 +22,9 @@
 
     z-index: 2;
     cursor:pointer;
+
 }
+
 
 
 
@@ -31,10 +34,13 @@
     width: 100%;
     height:100%;
     top: 0;
-    color: white;
+    color: black;
     opacity:0;
-    background-color: #000000;
-    font-size:14px;
+    background-color: transparent;
+    font-size:1.4rem;
+    font-family: Quarto-Light;
+    z-index:1;
+
 
 
 }
@@ -55,7 +61,7 @@
 
 }
 
-.project  div{
+.project div{
     text-align: center;
     position: relative;
     background-repeat: repeat;
@@ -69,7 +75,7 @@
 .detailPic .ul {
     list-style: none;
     width:60%;
-    height:90%;
+    height:80%;
     position: relative;
 
 }
@@ -106,4 +112,59 @@
     top: 0;
     z-index: 1;
     cursor: e-resize;
+}
+
+.follow{
+    position: absolute;
+    z-index:2;
+    font-family: Quarto-Light;
+    font-size:1.2rem;
+}
+
+@media (max-width: 500px) {
+    .project{
+        height:90%;
+        width:100%;
+        position:absolute;
+        top:10%;
+        overflow:scroll;
+
+    }
+    .wrapper{
+        overflow:scroll;
+    }
+    .close{
+        display:none;
+    }
+
+    .detailPic .ul li {
+        position: relative;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height:auto;
+        margin-top:10%;
+    }
+    .detailPic .ul li:not(:nth-child(3)) {
+        opacity: 1;
+    }
+    .detailPic img{
+        width:100%;
+        height:auto;
+    }
+    .detailPic .ul{
+        overflow:scroll;
+        width: 100%;
+        height: 90%;
+        top:5%
+    }
+    .detailPic .ul .right, .detailPic .ul .left {
+        display: none;
+    }
+    .project div:not(.LazyLoad){
+        width:100% !important;
+        height:auto !important;
+        background-image: none!important;
+    }
+
 }

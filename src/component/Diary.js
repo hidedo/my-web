@@ -6,6 +6,7 @@ import '../css/animate.css'
 import '../css/Diary.css'
 import { Link } from 'react-router-dom'
 import LazyLoad from 'react-lazy-load'
+import MobileHeader from './MobileHeader'
 
 class Diary extends Component {
     constructor(props) {
@@ -73,23 +74,38 @@ class Diary extends Component {
         const imgArr = this.state.imgArr;
         const imglist = imgArr.map(v =>{
             let index = this.state.imgArr.indexOf(v)+1
+            if (window.screen.availWidth < 500){
             return(
                 <div className="filler" key={index} style={{'width':v.width/v.scale,'height':v.height/v.scale}}>
 
                     <LazyLoad>
-                    <img width='100%' src={`/image/${v.src}.jpg`} alt={v.src} />
+                    <img width='100%' src={`/image/m-diary-pic/${v.src}.jpg`} alt={v.src} />
                     </LazyLoad>
                 </div>
-            )
+            )}
+            else{
+                return(
+                    <div className="filler" key={index} style={{'width':v.width/v.scale,'height':v.height/v.scale}}>
+
+                        <LazyLoad>
+                            <img width='100%' src={`/image/diary-pic/${v.src}.jpg`} alt={v.src} />
+                        </LazyLoad>
+                    </div>
+                )
+            }
 
         });
 
         return(
+            <div>
+            <MobileHeader/>
             <div className='diary' ref='diary'>
                 <Link to='/' className='link'><span className='close'><i className='icon-cancel'></i></span></Link>
                 <span className='left' onClick={this.handleClickLeft.bind(this)}></span>
                 <span className='right' onClick={this.handleClickRight.bind(this)}></span>
             {imglist}
+
+            </div>
             </div>
         )
 
