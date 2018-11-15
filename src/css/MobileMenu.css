@@ -4,6 +4,9 @@
         position:absolute;
         left:5%;
         top:45%;
+        width:16px;
+        height:16px;
+
     }
 
 
@@ -36,5 +39,30 @@
     }
     .actived{
         color:grey;
+    }
+
+    .menu_span{
+        width:16px;
+        height:2px;
+        background-color: black;
+        display:block;
+        transition:all 300ms ease-in-out;
+        margin-top:3px;
+
+    }
+
+    .span1{
+        transform:translateX(1px) rotate(45deg);
+        transform-origin: 0 0;
+
+    }
+    .span2{
+        transform:scaleX(0);
+
+    }
+    .span3{
+        transform:translateY(1px) rotate(-45deg);
+        transform-origin: 0 0;
+
     }
 }

@@ -147,7 +147,7 @@ class Project extends Component {
                     <LazyLoad>
                     <img width='100%' src={`/image/m-project-pic/${v.src}.jpg`} alt={v.src}/>
                     </LazyLoad>
-                    {v.name}F
+                    {v.name}
                 </div>
             )}
             else{

@@ -15,8 +15,7 @@ class MobileMenu extends Info {
         super(props);
         this.state = {
             isOpen: false,
-            isClicked: false
-
+            isClicked: false,
         }
     }
 
@@ -24,7 +23,11 @@ class MobileMenu extends Info {
     handleClick() {
 
         this.setState({isClicked: true});
+
         this.setState({isOpen: !this.state.isOpen});
+
+
+
 
     }
 
@@ -35,7 +38,12 @@ class MobileMenu extends Info {
 
             <div style={{display:'inline'}}>
                 <div className='mobile_menu'  onClick = {this.handleClick.bind(this)}>
-                    {this.state.isOpen ? <i className ='icon-cancel'></i> : <i className ='icon-menu'></i>}
+                    {/*{this.state.isOpen ? <i className ='icon-cancel'></i> : <i className ='icon-menu'></i>}*/}
+
+                        <span className={`menu_span ${this.state.isOpen?'span1':''}`}></span>
+                        <span className={`menu_span ${this.state.isOpen?'span2':''}`}></span>
+                        <span className={`menu_span ${this.state.isOpen?'span3':''}`}></span>
+
                 </div>
                 <MenuPage show = {this.state.isOpen} clicked={this.state.isClicked}/>
 
