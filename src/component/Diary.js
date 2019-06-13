@@ -99,7 +99,7 @@ class Diary extends Component {
         return(
             <div>
             <MobileHeader/>
-            <div className='diary' ref='diary'>
+            <div className={`diary fadeIn animated2`} ref='diary'>
                 <Link to='/' className='link'><span className='close'><i className='icon-cancel'></i></span></Link>
                 <span className='left' onClick={this.handleClickLeft.bind(this)}></span>
                 <span className='right' onClick={this.handleClickRight.bind(this)}></span>

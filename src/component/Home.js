@@ -23,7 +23,7 @@ class Home extends Component {
     }
     render(){
         return(
-            <div className='home'>
+            <div className={`home fadeIn animated2`}>
                 <a href='/'><img width='102px' height='15px' className='logo' src={logo} alt='logo'/></a>
                 <PicList blur={this.state.isBlur}/>
                 <Info callbackParent={this.onChildChanged.bind(this)}/>

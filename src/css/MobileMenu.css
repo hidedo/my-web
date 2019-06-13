@@ -52,7 +52,7 @@
     }
 
     .span1{
-        transform:translateX(1px) rotate(45deg);
+        transform:translateX(1.3px) rotate(45deg);
         transform-origin: 0 0;
 
     }

@@ -2055,7 +2055,7 @@ Install the Firebase CLI if you haven’t already by running `npm install -g fir
 Then run the `firebase init` command from your project’s root. You need to choose the **Hosting: Configure and deploy Firebase Hosting sites** and choose the Firebase project you created in the previous step. You will need to agree with `database.rules.json` being created, choose `build` as the public directory, and also agree to **Configure as a single-page app** by replying with `y`.
 
 ```sh
-    === Project Setup
+    === Project1 Setup
 
     First, let's associate this project directory with a Firebase project.
     You can create multiple project aliases by running firebase use --add,
@@ -2115,11 +2115,11 @@ Now, after you create a production build with `npm run build`, you can deploy it
 
     ✔  Deploy complete!
 
-    Project Console: https://console.firebase.google.com/project/example-app-fd690/overview
+    Project1 Console: https://console.firebase.google.com/project/example-app-fd690/overview
     Hosting URL: https://example-app-fd690.firebaseapp.com
 ```
 
-For more information see [Add Firebase to your JavaScript Project](https://firebase.google.com/docs/web/setup).
+For more information see [Add Firebase to your JavaScript Project1](https://firebase.google.com/docs/web/setup).
 
 ### [GitHub Pages](https://pages.github.com/)
 

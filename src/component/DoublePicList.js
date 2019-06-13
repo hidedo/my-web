@@ -118,7 +118,7 @@ class DoublePicList extends Component {
         return(
             <div>
                 <MobileHeader/>
-            <div  className='doublePicList'>
+            <div  className={`doublePicList fadeIn animated2`}>
 
                 <ul className='ul'>
                     <span className='left' onClick={this.handleClickLeft.bind(this)}></span>

@@ -39,7 +39,7 @@
     {"src":"index-pic-35"}
 
   ],
-  "project":[
+  "nomore_project":[
     {"src":"14April","name":"Books - 14 April","width":"1000","height":"1497","scale":5,"margin":"5%"},
     {"src":"Commissions_Feorran","name":"Commissions - Feorran Spring/Summer 2019","width":"1000","height":"1226","scale":3,"margin":"10%"},
     {"src":"Girls","name":"Girls","width":"1000","height":"1511","scale":4,"margin":"5%"},
@@ -53,16 +53,39 @@
     {"src":"After_the_Wind","name":"Books - After the Wind","width":"884","height":"1000","scale":3,"margin":"10%"}
 
   ],
-  "projectDetail":{
+  "projectGroup":[
+    {"profile":{"name":"Books - 14 April", "scale":7,"margin":"5%"},
+      "imgArr":[
+        {"src":"14April/14April"},
+        {"src":"14April/14_april_01"},
+        {"src":"14April/14_april_02"},
+        {"src":"14April/14_april_03"}]},
+    {"profile":{"name":"Commissions - Feorran Spring/Summer 2019","scale":4,"margin":"10%"},
+      "imgArr":[
+        {"src":"14April/14_april_02"},
+        {"src":"14April/14_april_01"}
+        ]},
+    {"profile":{"name":"Girls","scale":5,"margin":"8%"},
+      "imgArr":[
+        {"src":"Girls/Girls"},
+        {"src":"Girls/index-pic-06"}
+      ]},
+    {"profile":{"name":"Books - No Word From Above","scale":6,"margin":"9%"},
+      "imgArr":[
+        {"src":"14April/14_april_03"},
+        {"src":"14April/14_april_01"}
+      ]}
+  ],
+
+
+  "nomore_projectDetail":{
     "numero1":[
       {"src":"index-pic-06"},
       {"src":"14_april_01"},
       {"src":"14_april_02"},
       {"src":"14_april_03"}],
     "numero2":[
-      {"src":"img/3"},
-      {"src":"img/2"},
-      {"src":"img/1"}
+      {"src":"14_april_03"}
     ]},
   "double":{
     "imgArr1":[
@@ -92,4 +115,4 @@
     {"src":"blank","width":"1","height":"10","scale":1}
 
   ]
-  }
+}

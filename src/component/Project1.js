@@ -2,7 +2,7 @@
  * Created by tommy on 2018/6/8.
  */
 import React, { Component } from 'react';
-import '../css/Project.css'
+import '../css/Project1.css'
 import '../css/animate.css'
 import PicList from './PicList'
 import '../css/fontello-7529c44d/css/font.css'
@@ -25,7 +25,7 @@ function imagesLoaded(parentNode,id){
 }
 
 
-class Project extends Component {
+class Project1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -295,4 +295,4 @@ class DetailPic extends PicList {
 }
 
 
-export default Project;
+export default Project1;

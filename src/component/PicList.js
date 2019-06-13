@@ -13,7 +13,7 @@ class PicList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-           n:1,
+           n:1,//counter
            imgArr:[]
 
         }
@@ -22,18 +22,20 @@ class PicList extends Component {
     handleClickRight(e){
         e.stopPropagation()
         let n = this.state.n;
-
-        if(!this.refs[`myli${n+1}`]){
-
-            this.refs.myli1.setAttribute('class',`fadeIn animated`);
-            this.refs[`myli${n}`].setAttribute('class','notdisplay');
-            this.setState({n:1});
-            return;
+        if(Object.keys(this.refs).length !== 1) {
+            if (!this.refs[`myli${n + 1}`]) {
+                this.refs.myli1.setAttribute('class', `fadeIn animated`);
+                this.refs[`myli${n}`].setAttribute('class', 'notdisplay');
+                this.setState({n: 1});
+                return;
+            }
+            this.refs[`myli${n}`].setAttribute('class', 'notdisplay');
+            this.refs[`myli${n + 1}`].setAttribute('class', `fadeIn animated`);
+            this.setState({n: n + 1})
         }
-        this.refs[`myli${n}`].setAttribute('class','notdisplay');
-        this.refs[`myli${n+1}`].setAttribute('class',`fadeIn animated`);
-        this.setState({n:n+1})
-
+        else{
+            return false;
+        }
     }
     handleClickLeft(e){
         e.stopPropagation()

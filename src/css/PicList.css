@@ -54,7 +54,7 @@
     z-index: 1;
     cursor:e-resize;
 }
-.notdisplay{
+.picList .notdisplay{
     display:none;
 }
 

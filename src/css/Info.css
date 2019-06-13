@@ -8,6 +8,7 @@
     z-index: 3;
 
     cursor:pointer;
+
 }
 
 
@@ -50,7 +51,15 @@ a{
 .page a:hover{
     color:transparent;
 }
+.active{
 
+    transform:translateY(-2px) rotate(45deg);
+
+}
+.info i{
+    display:block;
+    transition:transform 200ms ease;
+}
 @media (max-width: 500px){
     .info{
         display:none;

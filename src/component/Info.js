@@ -34,8 +34,8 @@ class Info extends Component {
         return (
 
             <div style={{height: '100%', width: '100%'}}>
-                <div className='info'  onClick = {this.handleClick.bind(this)}>
-                {this.state.isOpen ? <i className ='icon-cancel'></i> : <i className ='icon-plus'></i>}
+                <div className={'info'}  onClick = {this.handleClick.bind(this)}>
+                    <i  className ={`icon-plus ${this.state.isOpen?'active':''}`}></i>
                 </div>
                 <Page show = {this.state.isOpen} clicked={this.state.isClicked}/>
 
