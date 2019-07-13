@@ -65,7 +65,7 @@
         {"src":"14April/14_april_02"},
         {"src":"14April/14_april_01"}
         ]},
-    {"profile":{"name":"Girls","scale":5,"margin":"8%"},
+    {"profile":{"name":"Girls","scale":3,"margin":"8%"},
       "imgArr":[
         {"src":"Girls/Girls"},
         {"src":"Girls/index-pic-06"}

@@ -24,13 +24,13 @@ class PicList extends Component {
         let n = this.state.n;
         if(Object.keys(this.refs).length !== 1) {
             if (!this.refs[`myli${n + 1}`]) {
-                this.refs.myli1.setAttribute('class', `fadeIn animated`);
+                this.refs.myli1.setAttribute('class', `fadeIn animated pcli`);
                 this.refs[`myli${n}`].setAttribute('class', 'notdisplay');
                 this.setState({n: 1});
                 return;
             }
             this.refs[`myli${n}`].setAttribute('class', 'notdisplay');
-            this.refs[`myli${n + 1}`].setAttribute('class', `fadeIn animated`);
+            this.refs[`myli${n + 1}`].setAttribute('class', `fadeIn animated pcli`);
             this.setState({n: n + 1})
         }
         else{
@@ -46,7 +46,7 @@ class PicList extends Component {
             return;
         }
         this.refs[`myli${n}`].setAttribute('class','notdisplay');
-        this.refs[`myli${n-1}`].setAttribute('class',`fadeIn animated`);
+        this.refs[`myli${n-1}`].setAttribute('class',`fadeIn animated pcli`);
         this.setState({n:n-1})
 
     }

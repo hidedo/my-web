@@ -18,18 +18,31 @@ class ProjectGroup extends PicList{
         this.state.imgArr = this.props.imgArr;
         const imglist = this.state.imgArr.map(v => {
             let index = this.state.imgArr.indexOf(v) + 1;
-            return(
-
-                <li  className={'filler'} ref={`myli${index}`} key={index}>
-                    <LazyLoad height={'100%'} >
-                        <img  height='100%' src={`/image/project-pic/${v.src}.jpg`} alt={v.src}/>
+            if (window.screen.availWidth < 500) {
+                return(
+                <li  className={'filler mbli'} ref={`myli${index}`} key={index}>
+                    <LazyLoad height={'100%'}>
+                        <img height='100%' src={`/image/m-project-pic/${v.src}.jpg`} alt={v.src}/>
                     </LazyLoad>
                 </li>
-
-            )
+                )
+            }
+            else {
+                return (
+                    <li className={'filler pcli'} ref={`myli${index}`} key={index}>
+                    <LazyLoad height={'100%'}>
+                        <img height='100%' src={`/image/project-pic/${v.src}.jpg`} alt={v.src}/>
+                    </LazyLoad>
+                    </li>
+                )
             }
 
+
+        }
         )
+
+
+
         let profile = this.props.profile;
         return (
             <div  style={{'width': 2000 / profile.scale, 'height': 1500 / profile.scale, 'margin': profile.margin,
@@ -87,13 +100,14 @@ class Project2 extends Component {
                 const heights = offset.map(value => value[0] + value[1] - scrollTop);
                 console.log(heights,window.innerHeight);
                 heights.forEach(function(val,idx) {
-                    if (val < window.innerHeight) {
+                    if (0 < val && val < window.innerHeight) {
                         elements[idx].classList.add("fadeIn","animated2")
                     }
-                    // else{
-                    //     elements[idx].classList.remove("fadeIn")
-                    //     elements[idx].classList.add("fadeOut")
-                    // }
+                    else {
+                        elements[idx].classList.remove("fadeIn","animated2")
+
+                    }
+
                 })
 
 
