@@ -5,7 +5,9 @@ import React, { Component } from 'react';
 import '../css/PicList.css'
 import '../css/animate.css'
 import LazyLoad from 'react-lazy-load'
+import classNames from 'classnames'
 
+import $ from 'jquery'
 
 
 
@@ -38,20 +40,40 @@ class PicList extends Component {
         }
     }
     handleClickLeft(e){
-        e.stopPropagation()
+        e.stopPropagation();
         let n = this.state.n;
+        // const classes = classNames({
+        //     'fadeIn':true,
+        //     'animated':true,
+        //     'pcli':true,
+        //
+        // })
 
-        if(!this.refs[`myli${n-1}`]){
-
+        if(n ===1){
+            this.refs[`myli${1}`].classList.remove('fadeIn','animated','pcli')
+            this.refs[`myli${1}`].style.animation = 'fadeIn .5s'
+            this.refs[`myli${1}`].classList.add('pcli')
+            this.refs[`myli${1}`].addEventListener('webkitAnimationEnd',()=>this.refs[`myli${1}`].style.animation = '')
             return;
         }
-        this.refs[`myli${n}`].setAttribute('class','notdisplay');
-        this.refs[`myli${n-1}`].setAttribute('class',`fadeIn animated pcli`);
-        this.setState({n:n-1})
+        else if(n!==1 && n!==2)
+        {
+            this.refs[`myli${n}`].setAttribute('class', 'notdisplay');
+            this.refs[`myli${n - 1}`].setAttribute('class', `fadeIn animated pcli`);
+            this.setState({n: n - 1})
+        }
+        else if(n===2){
+            this.refs[`myli${n}`].setAttribute('class', 'notdisplay');
+            this.refs[`myli${n - 1}`].classList.remove('notdisplay')
+            this.refs[`myli${n - 1}`].classList.add('pcli')
+            this.refs[`myli${n - 1}`].setAttribute('style','animation:fadeIn .5s') ;
+            this.refs[`myli${1}`].addEventListener('webkitAnimationEnd',()=>this.refs[`myli${1}`].style.animation = '')
+            this.setState({n: n - 1})
+        }
 
     }
 
-    componentWillMount(){
+    componentDidMount(){
         fetch('./conf.json')
         .then(res => res.json())
         .then(data => this.setState({imgArr:data.home}))

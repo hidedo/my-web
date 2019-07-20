@@ -13,7 +13,7 @@ import LazyLoad from "react-lazy-load";
 
 class ProjectGroup extends PicList{
 
-    componentWillMount(){};
+    componentDidMount(){};
     render(){
         this.state.imgArr = this.props.imgArr;
         const imglist = this.state.imgArr.map(v => {
@@ -45,7 +45,7 @@ class ProjectGroup extends PicList{
 
         let profile = this.props.profile;
         return (
-            <div  style={{'width': 2000 / profile.scale, 'height': 1500 / profile.scale, 'margin': profile.margin,
+            <div  style={{'width': 2500 / profile.scale, 'height': 1500 / profile.scale, 'margin': profile.margin,
             }}>
                 <ul className={'ul'}>
                     <span className='left' onClick={this.handleClickLeft.bind(this)}></span>
@@ -59,8 +59,8 @@ class ProjectGroup extends PicList{
     }
 }
 class Project2 extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             data:[]
 
@@ -69,7 +69,7 @@ class Project2 extends Component {
     }
 
 
-    componentWillMount() {
+    componentDidMount() {
         fetch('./conf.json')
             .then(res => res.json())
             .then(data => {
@@ -79,42 +79,39 @@ class Project2 extends Component {
             )
             .catch((e) => console.log(e.message))
 
-
-    }
-
-    componentDidMount() {
         document.getElementsByClassName('wrapper')[0].onscroll = handleScroll;
 
 
-            function handleScroll() {
-                const elements = document.querySelectorAll('.profileName');
-                const offset = [];
-                for (let item of elements) {
+        function handleScroll() {
+            const elements = document.querySelectorAll('.profileName');
+            const offset = [];
+            for (let item of elements) {
 
-                    offset.push([item.offsetTop, item.offsetHeight]);
-
-                }
-
-
-                const scrollTop = document.getElementsByClassName('wrapper')[0].scrollTop;
-                const heights = offset.map(value => value[0] + value[1] - scrollTop);
-                console.log(heights,window.innerHeight);
-                heights.forEach(function(val,idx) {
-                    if (0 < val && val < window.innerHeight) {
-                        elements[idx].classList.add("fadeIn","animated2")
-                    }
-                    else {
-                        elements[idx].classList.remove("fadeIn","animated2")
-
-                    }
-
-                })
-
-
+                offset.push([item.offsetTop, item.offsetHeight]);
 
             }
 
 
+            const scrollTop = document.getElementsByClassName('wrapper')[0].scrollTop;
+            const heights = offset.map(value => value[0] + value[1] - scrollTop);
+            // console.log(heights,window.innerHeight);
+            heights.forEach(function(val,idx) {
+                if (0 < val && val < window.innerHeight) {
+                    elements[idx].classList.add("fadeIn","animated2")
+                }
+                else {
+                    elements[idx].classList.remove("fadeIn","animated2")
+
+                }
+
+            })
+
+
+
+        }
+
+
+
 
 
 
@@ -122,6 +119,8 @@ class Project2 extends Component {
 
 
     }
+
+
 
 
 

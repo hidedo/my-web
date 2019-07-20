@@ -61,7 +61,7 @@ class DoublePicList extends Component {
             }
         }
 
-    componentWillMount(){
+    componentDidMount(){
         fetch('./conf.json')
             .then(res => res.json())
             .then(data => this.setState({imgArr1:data.double.imgArr1,imgArr2:data.double.imgArr2,length:data.double.imgArr1.length}))
