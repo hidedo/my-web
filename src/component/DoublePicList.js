@@ -7,6 +7,7 @@ import '../css/animate.css'
 import { Link } from 'react-router-dom'
 import MobileHeader from './MobileHeader'
 import LazyLoad from 'react-lazy-load'
+import BaseUrl from '../baseUrl'
 
 class DoublePicList extends Component {
     constructor(props) {
@@ -62,7 +63,7 @@ class DoublePicList extends Component {
         }
 
     componentDidMount(){
-        fetch('./conf.json')
+        fetch(`${BaseUrl.url}/public/conf.json`)
             .then(res => res.json())
             .then(data => this.setState({imgArr1:data.double.imgArr1,imgArr2:data.double.imgArr2,length:data.double.imgArr1.length}))
             .catch((e) => console.log(e.message))
@@ -80,7 +81,7 @@ class DoublePicList extends Component {
             return (
                 <li  ref={`myli1${index}`} key={index}>
 
-                    <img  height='100%' src={`/image/double-pic/${v.src}.jpg`} alt={v.src}/>
+                    <img  height='100%' src={`${BaseUrl.url}/public/image/double-pic/${v.src}.jpg`} alt={v.src}/>
 
                 </li>
             )
@@ -92,7 +93,7 @@ class DoublePicList extends Component {
             return(
                 <li ref={`myli2${index}`} key={index}>
 
-                    <img  height='100%' src={`/image/double-pic/${v.src}.jpg`} alt={v.src}/>
+                    <img  height='100%' src={`${BaseUrl.url}/public/image/double-pic/${v.src}.jpg`} alt={v.src}/>
 
                 </li>
             )
@@ -105,10 +106,10 @@ class DoublePicList extends Component {
             return (
                 <li className={'filler'} key={index}>
                     <LazyLoad>
-                    <img  height='100%' src={`/image/m-double-pic/${v1.src}.jpg`} alt={v1.src}/>
+                    <img  height='100%' src={`${BaseUrl.url}/public/image/m-double-pic/${v1.src}.jpg`} alt={v1.src}/>
                     </LazyLoad>
                     <LazyLoad>
-                    <img  height='100%' src={`/image/m-double-pic/${imgArr2_src}.jpg`} alt={imgArr2_src}/>
+                    <img  height='100%' src={`${BaseUrl.url}/public/image/m-double-pic/${imgArr2_src}.jpg`} alt={imgArr2_src}/>
                     </LazyLoad>
                 </li>
             )}

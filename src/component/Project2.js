@@ -9,6 +9,7 @@ import '../css/fontello-7529c44d/css/font.css'
 import { Link } from 'react-router-dom'
 import MobileHeader from './MobileHeader'
 import LazyLoad from "react-lazy-load";
+import BaseUrl from '../baseUrl'
 
 
 class ProjectGroup extends PicList{
@@ -22,7 +23,7 @@ class ProjectGroup extends PicList{
                 return(
                 <li  className={'filler mbli'} ref={`myli${index}`} key={index}>
                     <LazyLoad height={'100%'}>
-                        <img height='100%' src={`/image/m-project-pic/${v.src}.jpg`} alt={v.src}/>
+                        <img height='100%' src={`${BaseUrl.url}/public/image/m-project-pic/${v.src}.jpg`} alt={v.src}/>
                     </LazyLoad>
                 </li>
                 )
@@ -31,7 +32,7 @@ class ProjectGroup extends PicList{
                 return (
                     <li className={'filler pcli'} ref={`myli${index}`} key={index}>
                     <LazyLoad height={'100%'}>
-                        <img height='100%' src={`/image/project-pic/${v.src}.jpg`} alt={v.src}/>
+                        <img height='100%' src={`${BaseUrl.url}/public/image/project-pic/${v.src}.jpg`} alt={v.src}/>
                     </LazyLoad>
                     </li>
                 )
@@ -52,7 +53,7 @@ class ProjectGroup extends PicList{
                     <span className='right'  onClick={this.handleClickRight.bind(this)}></span>
                     {imglist}
                 </ul>
-                <span className={'profileName'} style={{'width':'100%','textAlign':'center','marginTop':'5%','display':'block'}}>{profile.name}</span>
+                <span className={'profileName'} style={{'width':'100%','textAlign':'center','marginTop':'10px','display':'block'}}>{profile.name}</span>
             </div>
         )
 
@@ -62,7 +63,7 @@ class Project2 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data:[]
+            data:[],
 
         }
 
@@ -70,7 +71,7 @@ class Project2 extends Component {
 
 
     componentDidMount() {
-        fetch('./conf.json')
+        fetch(`${BaseUrl.url}/public/conf.json`)
             .then(res => res.json())
             .then(data => {
                     this.setState({data: data.projectGroup});

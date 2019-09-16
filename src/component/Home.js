@@ -22,6 +22,11 @@ class Home extends Component {
         })
     }
     render(){
+        if(navigator.userAgent.indexOf('Chrome')==-1 && navigator.userAgent.indexOf('Safari')==-1) {
+
+            document.write('please use chrome or safari')
+
+        }
         return(
             <div className={`home fadeIn animated2`}>
                 <a href='/'><img width='102px' height='15px' className='logo' src={logo} alt='logo'/></a>

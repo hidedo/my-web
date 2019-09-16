@@ -13,5 +13,7 @@
         width: 40%;
         font-size: 1.4rem;
     }
-
+.text1,.text2:active{
+    color:silver;
+}
 }

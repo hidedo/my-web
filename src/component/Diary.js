@@ -7,6 +7,7 @@ import '../css/Diary.css'
 import { Link } from 'react-router-dom'
 import LazyLoad from 'react-lazy-load'
 import MobileHeader from './MobileHeader'
+import BaseUrl from '../baseUrl'
 
 class Diary extends Component {
     constructor(props) {
@@ -45,7 +46,8 @@ class Diary extends Component {
         let start = this.refs.diary.scrollLeft;
 
 
-        this.timer=setInterval(()=> {
+        this.timer=
+            setInterval(()=> {
             if ((start- this.refs.diary.scrollLeft) === 500||this.refs.diary.scrollLeft===0) {
 
                 clearInterval(this.timer)
@@ -59,10 +61,11 @@ class Diary extends Component {
 
             }
         }, 20)
+
     }
 
     componentWillMount(){
-        fetch('./conf.json')
+        fetch(`${BaseUrl.url}/public/conf.json`)
             .then(res => res.json())
             .then(data => this.setState({imgArr:data.diary}))
             .catch((e) => console.log(e.message))
@@ -79,7 +82,7 @@ class Diary extends Component {
                 <div className="filler" key={index} style={{'width':v.width/v.scale,'height':v.height/v.scale}}>
 
                     <LazyLoad>
-                    <img width='100%' src={`/image/m-diary-pic/${v.src}.jpg`} alt={v.src} />
+                    <img width='100%' src={`${BaseUrl.url}/public/image/m-diary-pic/${v.src}.jpg`} alt={v.src} />
                     </LazyLoad>
                 </div>
             )}
@@ -88,7 +91,7 @@ class Diary extends Component {
                     <div className="filler" key={index} style={{'width':v.width/v.scale,'height':v.height/v.scale}}>
 
                         <LazyLoad>
-                            <img width='100%' src={`/image/diary-pic/${v.src}.jpg`} alt={v.src} />
+                            <img width='100%' src={`${BaseUrl.url}/public/image/diary-pic/${v.src}.jpg`} alt={v.src} />
                         </LazyLoad>
                     </div>
                 )

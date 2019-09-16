@@ -6,6 +6,7 @@ import '../css/Info.css'
 import '../css/animate.css'
 import classNames from 'classnames'
 import '../css/fontello-7529c44d/css/font.css'
+import BaseUrl from "../baseUrl";
 
 
 class Info extends Component {
@@ -57,7 +58,7 @@ class Page extends Component {
     }
 
     componentDidMount() {
-        fetch('./text.txt')
+        fetch(`${BaseUrl.url}/public/text.txt`)
             .then(res => res.text())
             .then(data => {
                 this.setState({text1: data.split('text2dontmove')[0], text2: data.split('text2dontmove')[1]});
@@ -69,11 +70,11 @@ class Page extends Component {
 
     render() {
         const className = classNames({
+            'page': true,
             'slideInRight': this.props.show,
             'animated1': true,
             'slideOutRight': (!this.props.show) && this.props.clicked,
             'hide': !this.props.clicked,
-            'page': true
         })
 
 

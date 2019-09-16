@@ -2,6 +2,7 @@ import {Component} from "react";
 import React from "react";
 import MobileHeader from "./MobileHeader";
 import '../css/MobileInfo.css'
+import BaseUrl from "../baseUrl";
 
 class MobileInfo extends Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class MobileInfo extends Component {
     }
 
     componentDidMount() {
-        fetch('./text.txt')
+        fetch(`${BaseUrl.url}/public/text.txt`)
             .then(res => res.text())
             .then(data => {
                 this.setState({text1: data.split('text2dontmove')[0], text2: data.split('text2dontmove')[1]});
