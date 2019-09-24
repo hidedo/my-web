@@ -13,9 +13,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
     <mata name="keywords" content="intimate,no word from above,14 april,li hui,website,after the wind,landscape,huiuh,photography,photographs,double-exposure,fine art,hidden,delicate,poetic,interview,magazine,magical,fashion,photographer,editorial,artwork,huiuh_,surreal,cinematic"></mata>
     <mata name="description" content="Li Hui is a photographer who often focuses on youth,nature magic,intimate images.Her work has been featured in many fashion and lifestyle magazines from all over the world"></mata>
-      <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
@@ -36,11 +38,7 @@
         <!--s.parentNode.insertBefore(ga, s);-->
       <!--})();-->
     <!--</script>-->
-    <!--<script src="https://use.typekit.net/juc7jzo.js"></script>-->
-    <!--<script>try {-->
-      <!--Typekit.load({async: true});-->
-    <!--} catch (e) {-->
-    <!--}</script>-->
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -56,6 +54,14 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
+    <script>
+
+      if(navigator.userAgent.indexOf('Chrome')==-1 && navigator.userAgent.indexOf('Safari')==-1) {
+
+        alert('please use chrome or safari to obtain the best effect')
+      }
+
+    </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.
